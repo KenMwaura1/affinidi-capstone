@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import './ProductDisplay.css';
 
 const ProductDisplay = ({ addToCart }) => {
@@ -11,14 +12,14 @@ const ProductDisplay = ({ addToCart }) => {
     <div className="ProductDisplay">
       {products.map((product) => (
         <div key={product.id} className="ProductItem">
-          <img src={product.imageUrl} alt={product.name} />
+          <Image src={product.imageUrl} alt={product.name} width={200} height={200} />
           <h2>{product.name}</h2>
           <p>${product.price}</p>
           <button onClick={() => addToCart(product)}>Add to Cart</button>
         </div>
       ))}
     </div>
-      );
+  );
 };
 
 export default ProductDisplay;
